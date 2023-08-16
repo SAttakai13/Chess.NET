@@ -20,6 +20,7 @@ namespace Chess.View.Window
     /// </summary>
     public partial class MainWindow : Window
     {
+        public string RuleGame { set; get; }
         /// <summary>
         /// Represents the view model of the window.
         /// </summary>
@@ -36,7 +37,7 @@ namespace Chess.View.Window
         public MainWindow()
         {
             this.InitializeComponent();
-            this.game = new ChessGameVM(this.Choose);
+            this.game = new ChessGameVM(this.Choose, RuleGame);
             this.promotionSelector = new PromotionSelector();
             this.DataContext = this.game;
         }
